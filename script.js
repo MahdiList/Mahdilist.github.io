@@ -6,10 +6,10 @@ window.onload = function() {
     clearFocus();
 };
 
-//v 4.0 save / get array via cookies
-//v 4.0 read cookie on load and display
+//save / get array via cookies
+// read cookie on load and display
 
-//v4.1 get values via URL
+// get values via URL
 function get(name){
     var url = window.location.search;
     var num = url.search(name);
