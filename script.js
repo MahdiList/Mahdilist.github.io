@@ -1,6 +1,6 @@
 //v3.4 Add popup describing app when visitors load webpage the first time
 window.onload = function() {
-    alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
+    alert("Welcome to 'Shopping List' App!\n\nCreated by Omar Mahdi\nUsing Javascript");
     populateshoppinglistonload();
     displayShoppinglists();
     clearFocus();
@@ -24,7 +24,7 @@ function get(name){
 //ShareList passbyvalues Week 14
 function passlist()
 {
- var url = "https://rvclist.github.io/rvclist14/index.html?list="+ shoppinglist;
+ var url = "https://github.com/MahdiList/Mahdilist.github.io/blob/main/index.html"+ shoppinglist;
  //Week 14 add link to sharelist id
       document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
  //Copy URL
