@@ -1,15 +1,15 @@
-//popup describing app when visitors load webpage the first time
+//v3.4 Add popup describing app when visitors load webpage the first time
 window.onload = function() {
-    alert("Welcome to 'Shopping List' App!\n\nCreated using Javascript by RVC student Omar Mahdi");
+    alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
     populateshoppinglistonload();
     displayShoppinglists();
     clearFocus();
 };
 
-//save / get array via cookies
-// read cookie on load and display
+//v 4.0 save / get array via cookies
+//v 4.0 read cookie on load and display
 
-// get values via URL
+//v4.1 get values via URL
 function get(name){
     var url = window.location.search;
     var num = url.search(name);
@@ -21,11 +21,11 @@ function get(name){
     if(num>=0) return url.substr(0,num);
     if(num<0)  return url;
 }
-//ShareList passbyvalues 
+//ShareList passbyvalues Week 14
 function passlist()
 {
- var url = "https://mahdilist.github.io/"+ shoppinglist;
- //link to sharelist id
+ var url = "https://rvclist.github.io/rvclist14/index.html?list="+ shoppinglist;
+ //Week 14 add link to sharelist id
       document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
  //Copy URL
       copyToClipboard(url);
@@ -35,7 +35,7 @@ function share()
 {
    passlist();
 }
-//Copy URL
+//Copy URL Week 14
 function copyToClipboard(text) {
   var passbyurl = document.createElement("textarea");
   passbyurl.value = text;
@@ -51,7 +51,7 @@ function copyToClipboard(text) {
 
 function about()
 {
-    alert("Welcome to 'Shopping List' App!\n\nCreated using Javascript\n by RVC student Omar Mahdi\n");
+    alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Students**\n\nQuestions?\nemail Professor Chuck Konkol\nc.konkol@rockvalleycollege.edu\n\nRegister @ RockValleyCollege.edu");
     
 }
 //read cookie and return
@@ -66,7 +66,7 @@ function readCookie(name) {
     return null;
 }
 
-//remove and format cookie
+//v. 4.0remove and format cookie
 function remove_unwanted(str) {  
     
   if ((str===null) || (str===''))  
@@ -83,7 +83,7 @@ function remove_unwanted(str) {
 }  
 
 
-//save cookie
+//v 4.0 save cookie
 function savecookie()
 {
   delete_cookie('konkollist');
@@ -94,7 +94,7 @@ function savecookie()
 }
 
 
-//delete cookie
+//v 4.0 delete cookie
 function delete_cookie(name) {
   document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
@@ -110,7 +110,7 @@ function populateshoppinglistonload()
   y = remove_unwanted(y); 
   //spit array by comma %2C
   
-   //get URL
+   //v 4.1 get URL
   var geturllistvalue = get("list");
     if (geturllistvalue) {
         geturllistvalue = remove_unwanted(geturllistvalue);
@@ -130,10 +130,10 @@ var MyItems = {
 
 var shoppinglist = [];
 
-//addtocart empty array
+//v 3.1 addtocart empty array
 var addtocart = [];
 
-//
+//v3.1
 function changeShoppinglist(position) {
   //document.getElementById("MyList").innerHTML = shoppinglist[position];
   var arrays = shoppinglist[position];
@@ -146,11 +146,11 @@ function changeShoppinglist(position) {
   shoppinglist[position] = eitem + "," + '$' + ecost;
   displayShoppinglists();
   displayShoppingCart();
-  //save cookie
+  //v 4.0 save cookie
   savecookie();
 }
 
-//
+//v3.1
 function changeShoppingCart(position) {
   document.getElementById("MyCart").innerHTML = shoppinglist[position];
   var arrays = addtocart[position];
@@ -163,42 +163,42 @@ function changeShoppingCart(position) {
   addtocart[position] = eitem + "," + '$' + ecost;
   displayShoppinglists();
   displayShoppingCart();
-  //save cookie
+  //v 4.0 save cookie
    savecookie();
 }
 
-// 
+//v3.1 
 function addbacktoshoppinglist(item,num) {
   //push to deleteShoppingCar
    deleteShoppingCart(num);
   shoppinglist.push(item);
   //display shoppinglist
   displayShoppinglists();
-//display displayShoppingCart() 
+//v3.1 display displayShoppingCart() 
   displayShoppingCart(); 
   clearFocus();
-  //save cookie
+  //v 4.0 save cookie
    savecookie();
 }
 
-//Update function addShoppinglist
+//v 3.1 Update function addShoppinglist by adding objects
 function addtoshopcart(item, num) {
     document.getElementById("sharelist").innerHTML = ' ';
     deleteShoppinglists(num);
     addtocart.push(item);
   //display shoppinglist
   displayShoppinglists();
-//displayShoppingCart() 
+//v3.1 display displayShoppingCart() 
   displayShoppingCart(); 
   //Clear
   clearFocus();
-  //save cookie
+  //v 4.0 save cookie
    savecookie();
 }
 
-//Update function addShoppinglist
+//v 3.1 Update function addShoppinglist by adding objects
 function addShoppinglist(item) {
-  //declare variable for groc string
+  //v 3.0 declare variable for groc string
   //push to shoppinglist
   if (item != "")
   {
@@ -206,10 +206,10 @@ function addShoppinglist(item) {
   shoppinglist.push(item);
   //display shoppinglist
   displayShoppinglists();
-//display displayShoppingCart() 
+//v3.1 display displayShoppingCart() 
   displayShoppingCart(); 
   clearFocus();
-  //save cookie
+  //v 4.0 save cookie
   savecookie();
   }else
   {
@@ -226,7 +226,7 @@ function clearFocus()
 }
 
 
-//Update ShoppinhList
+//Update ShoppinhList Week 14
 function displayShoppinglists() {
 document.getElementById("MyList").innerHTML = '';
 var TheList = "";
@@ -234,46 +234,47 @@ var TheRow = "";
 //Get length of arraylist
 var arrayLength = shoppinglist.length;
 for (var i = 0; i < shoppinglist.length; i++) {
-  // change button name to btndelete
+  //v 3.1 change button name to btndelete
 var btndelete =  ' <input class="button" id="remove" name="delete" type="button" value="Remove" onclick="deleteShoppinglists(' + i + ')" />';
 //var btnupdate =  ' <input class="button" name="edit" type="button" value="Edit Item" onclick="changeShoppinglist(' + i + ')" />';
-//edit button using below i index & name it btnpdate
+//v 3.1 add edit button using below i index & name it btnpdate
 var arrays = shoppinglist[i];
 arrays = "'"+arrays+"'";
 var btnaddcart =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
-//Share Button
+//Week 14 Add Share Button
 var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Shopping List" onclick="share()" />';
 TheRow = '<li>' + shoppinglist[i] + btndelete + ' '  + btnaddcart + '</li>';
 TheList += TheRow;
 }
-//add Title
+//v3.1 add Title
 if (arrayLength > 0)
 {
   document.getElementById("MyList").innerHTML = '<ul>' + TheList + '</ul>';
-//Add Share Button if arraylist contains values 
+//Week 14 Add Share Button if arraylist contains values 
   document.getElementById("sharebutton").innerHTML = btnsharelist;
 }else
 {
   document.getElementById("MyList").innerHTML = ' ';
-//Remove Share Button and Sharelist if arraylist contains values 
+//Week 14 Remove Share Button and Sharelist if arraylist contains values 
   document.getElementById("sharebutton").innerHTML = ' ';
     document.getElementById("sharelist").innerHTML = ' ';
 }
 }
 
-//
+//v3.1
 function displayShoppingCart() {
 document.getElementById("MyCart").innerHTML = ''
 var TheList = "";
 var TheRow = "";
 var arrayLength = addtocart.length;
 for (var i = 0; i < arrayLength; i++) {
-  //change button name to btndelete
+  //v 3.1 change button name to btndelete
 var btndelete =  ' <input class="button" id="remove" name="delete" type="button" value="Remove" onclick="deleteShoppingCart(' + i + ')" />';
-
+//v 3.1 add edit button using below i index & name it btnpdate
 var btnupdate =  ' <input class="button" name="edit" type="button" value="Edit Item" onclick="changeShoppingCart(' + i + ')" />';
 var arrays = addtocart[i];
 arrays = "'"+arrays+"'";
+//v 3.1 add edit button using below i index & name it btnpdate
 var btnaddlist =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping List" onclick="addbacktoshoppinglist('+arrays+',' + i + ')" checked="checked"/>';
 TheRow =  "<li>" + addtocart[i] + btndelete + ' ' +  ' ' + btnaddlist + '</li>';
 TheList += TheRow;
@@ -289,16 +290,16 @@ if (arrayLength > 0)
 }
 }
 
-
+//v3.1
 function deleteShoppinglists(position) {
   document.getElementById("sharelist").innerHTML = ' ';
   shoppinglist.splice(position, 1);
   displayShoppinglists();
   displayShoppingCart();
-   // save cookie
+   //v 4.0 save cookie
   savecookie();
 }
-//
+//v3.1
 function deleteShoppingCart(position) {
   document.getElementById("sharelist").innerHTML = ' ';
   addtocart.splice(position, 1);
