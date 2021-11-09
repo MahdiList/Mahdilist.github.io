@@ -1,6 +1,6 @@
 //v3.4 Add popup describing app when visitors load webpage the first time
 window.onload = function() {
-    alert("Welcome to 'Shopping List' App!\n\nCreated by Omar Mahdi\nUsing Javascript");
+    alert("Welcome to 'Shopping List' App!\n\nCreated using Javascript by RVC student Omar Mahdi");
     populateshoppinglistonload();
     displayShoppinglists();
     clearFocus();
