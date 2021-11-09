@@ -24,7 +24,7 @@ function get(name){
 //ShareList passbyvalues Week 14
 function passlist()
 {
- var url = "https://Mahdilist.github.io/MahdiList/index.html?list="+ shoppinglist;
+ var url = "https://github.com/MahdiList/Mahdilist.github.io/blob/main/index.html"+ shoppinglist;
  //Week 14 add link to sharelist id
       document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
  //Copy URL
