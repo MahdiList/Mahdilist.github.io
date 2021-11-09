@@ -21,11 +21,11 @@ function get(name){
     if(num>=0) return url.substr(0,num);
     if(num<0)  return url;
 }
-//ShareList passbyvalues Week 14
+//ShareList passbyvalues 
 function passlist()
 {
  var url = "https://mahdilist.github.io/"+ shoppinglist;
- //Week 14 add link to sharelist id
+ //link to sharelist id
       document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
  //Copy URL
       copyToClipboard(url);
@@ -35,7 +35,7 @@ function share()
 {
    passlist();
 }
-//Copy URL Week 14
+//Copy URL
 function copyToClipboard(text) {
   var passbyurl = document.createElement("textarea");
   passbyurl.value = text;
@@ -226,7 +226,7 @@ function clearFocus()
 }
 
 
-//Update ShoppinhList Week 14
+//Update ShoppinhList
 function displayShoppinglists() {
 document.getElementById("MyList").innerHTML = '';
 var TheList = "";
@@ -241,7 +241,7 @@ var btndelete =  ' <input class="button" id="remove" name="delete" type="button"
 var arrays = shoppinglist[i];
 arrays = "'"+arrays+"'";
 var btnaddcart =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
-//Week 14 Add Share Button
+//Add Share Button
 var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Shopping List" onclick="share()" />';
 TheRow = '<li>' + shoppinglist[i] + btndelete + ' '  + btnaddcart + '</li>';
 TheList += TheRow;
@@ -250,12 +250,12 @@ TheList += TheRow;
 if (arrayLength > 0)
 {
   document.getElementById("MyList").innerHTML = '<ul>' + TheList + '</ul>';
-//Week 14 Add Share Button if arraylist contains values 
+ 
   document.getElementById("sharebutton").innerHTML = btnsharelist;
 }else
 {
   document.getElementById("MyList").innerHTML = ' ';
-//Week 14 Remove Share Button and Sharelist if arraylist contains values 
+ 
   document.getElementById("sharebutton").innerHTML = ' ';
     document.getElementById("sharelist").innerHTML = ' ';
 }
