@@ -9,6 +9,13 @@ a:visited {
     color: white;
 }
 
+
+img { width: 800px;
+      height: 800px;
+      margin-left: 900px
+}
+
+
 /* mouse over link */
 a:hover {
     color: hotpink;
