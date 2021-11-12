@@ -1,6 +1,6 @@
 //v3.4 Add popup describing app when visitors load webpage the first time
 window.onload = function() {
-    alert("Welcome to 'Shopping List' App!\n\nCreated Using Javascript\nby Rock Valley College student Omar Mahdi");
+    alert("Welcome to 'Bucket List' App!\n\nCreated Using Javascript\nby Rock Valley College student Omar Mahdi");
     populateshoppinglistonload();
     displayShoppinglists();
     clearFocus();
@@ -51,7 +51,7 @@ function copyToClipboard(text) {
 
 function about()
 {
-    alert("Welcome to 'Shopping List' App!\n\nCreated Using Javascript\nby Rock Valley College student Omar Mahdi");
+    alert("Welcome to 'Bucket List' App!\n\nCreated Using Javascript\nby Rock Valley College student Omar Mahdi");
     
 }
 //read cookie and return
