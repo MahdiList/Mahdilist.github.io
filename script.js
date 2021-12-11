@@ -242,7 +242,7 @@ var arrays = shoppinglist[i];
 arrays = "'"+arrays+"'";
 var btnaddcart =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
 //Add Share Button
-var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Shopping List" onclick="share()" />';
+var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Bucket List" onclick="share()" />';
 TheRow = '<li>' + shoppinglist[i] + btndelete + ' '  + btnaddcart + '</li>';
 TheList += TheRow;
 }
